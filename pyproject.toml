@@ -1,0 +1,17 @@
+[project]
+name = "reflex-full-stack"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Peerapon Wechsuwanmanee", email = "peerapon.w@gmail.com" }
+]
+dependencies = [
+    "reflex>=0.5.4",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = []
