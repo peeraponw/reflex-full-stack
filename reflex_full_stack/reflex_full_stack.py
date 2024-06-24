@@ -6,22 +6,29 @@ from rxconfig import config
 
 
 class State(rx.State):
-    """The app state."""
-
+    header = "Hello, Reflex!xxx"
+    
+    def handle_change_header(self, val):
+        self.header = val + " erwerw"
+    
+    
     ...
 
 
 def index() -> rx.Component:
     # Welcome Page (Index)
+    
     return rx.container(
         rx.color_mode.button(position="top-right"),
         rx.vstack(
-            rx.heading("Welcome to my Reflex!", size="9"),
+            rx.heading(State.header, size="9"),
             rx.text(
                 "Get started by editing ",
                 rx.code(f"{config.app_name}/{config.app_name}.py"),
                 size="5",
             ),
+            # rx.button(State.btn, on_click=State.change_btn),
+            rx.input(on_change=State.handle_change_header),
             rx.link(
                 rx.button("Check out our docs!"),
                 href="https://reflex.dev/docs/getting-started/introduction/",
