@@ -1,9 +1,8 @@
 import reflex as rx
 
+
 def navbar_link(text: str, url: str) -> rx.Component:
-    return rx.link(
-        rx.text(text, size="4", weight="medium"), href=url
-    )
+    return rx.link(rx.text(text, size="4", weight="medium"), href=url)
 
 
 def navbar() -> rx.Component:
@@ -17,9 +16,7 @@ def navbar() -> rx.Component:
                         height="auto",
                         border_radius="25%",
                     ),
-                    rx.heading(
-                        "Reflex", size="7", weight="bold"
-                    ),
+                    rx.heading("Reflex", size="7", weight="bold"),
                     align_items="center",
                 ),
                 rx.hstack(
@@ -53,15 +50,11 @@ def navbar() -> rx.Component:
                         height="auto",
                         border_radius="25%",
                     ),
-                    rx.heading(
-                        "Reflex", size="6", weight="bold"
-                    ),
+                    rx.heading("Reflex", size="6", weight="bold"),
                     align_items="center",
                 ),
                 rx.menu.root(
-                    rx.menu.trigger(
-                        rx.icon("menu", size=30)
-                    ),
+                    rx.menu.trigger(rx.icon("menu", size=30)),
                     rx.menu.content(
                         rx.menu.item("Home"),
                         rx.menu.item("About"),
@@ -85,4 +78,3 @@ def navbar() -> rx.Component:
         # z_index="5",
         width="100%",
     )
-
