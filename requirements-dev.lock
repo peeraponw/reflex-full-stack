@@ -18,6 +18,7 @@ anyio==4.4.0
     # via watchfiles
 bidict==0.23.1
     # via python-socketio
+black==24.4.2
 build==1.2.1
     # via reflex
 certifi==2024.6.2
@@ -29,6 +30,7 @@ charset-normalizer==3.3.2
     # via reflex-hosting-cli
     # via requests
 click==8.1.7
+    # via black
     # via typer
     # via uvicorn
 colorama==0.4.6
@@ -96,15 +98,20 @@ mdurl==0.1.2
 more-itertools==10.3.0
     # via jaraco-classes
     # via jaraco-functools
+mypy-extensions==1.0.0
+    # via black
 nh3==0.2.17
     # via readme-renderer
 orjson==3.10.5
     # via fastapi
 packaging==24.1
+    # via black
     # via build
     # via gunicorn
     # via lazy-loader
     # via reflex
+pathspec==0.12.1
+    # via black
 pip==24.1
     # via pipdeptree
 pipdeptree==2.16.2
@@ -112,6 +119,7 @@ pipdeptree==2.16.2
 pkginfo==1.11.1
     # via twine
 platformdirs==4.2.2
+    # via black
     # via reflex
     # via reflex-hosting-cli
 psutil==5.9.8
