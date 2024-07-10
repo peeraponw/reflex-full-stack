@@ -23,7 +23,7 @@ class State(rx.State):
 
     ...
 
-
+@rx.page(route=navigation.routes.HOME_PATH)
 def index() -> rx.Component:
     # Welcome Page (Index)
     child = rx.container(
@@ -48,4 +48,3 @@ def index() -> rx.Component:
 
 
 app = rx.App()
-app.add_page(index)
