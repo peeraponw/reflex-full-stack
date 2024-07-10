@@ -4,6 +4,7 @@ import reflex as rx
 
 from rxconfig import config
 from .ui.base import base
+from .pages.about import about
 
 
 class State(rx.State):
@@ -24,32 +25,38 @@ class State(rx.State):
 
 def index() -> rx.Component:
     # Welcome Page (Index)
-    return base(
-        rx.container(
-            rx.vstack(
-                rx.heading(State.header, size="9"),
-                rx.text(
-                    "Get started by editing ",
-                    rx.code(f"{config.app_name}/{config.app_name}.py"),
-                    size="5",
+    child = rx.container(
+                rx.vstack(
+                    rx.heading(State.header, size="9"),
+                    
+                    rx.text("This is my new app!"),
+                    # rx.text(
+                    #     "Get started by editing ",
+                    #     rx.code(f"{config.app_name}/{config.app_name}.py"),
+                    #     size="5",
+                    # ),
+                    # rx.button(State.clicked, on_click=State.handle_did_click, id="button"),
+                    # rx.input(
+                    #     default_value="Hello",
+                    #     on_change=State.handle_change_header,
+                    # ),
+                    # rx.link(
+                    #     rx.button("Check out our docs!"),
+                    #     href="https://reflex.dev/docs/getting-started/introduction/",
+                    #     is_external=True,
+                    # ),
+                    spacing="5",
+                    justify="center",
+                    align="center",
+                    min_height="85vh",
                 ),
-                rx.button(State.clicked, on_click=State.handle_did_click, id="button"),
-                rx.input(
-                    default_value="Hello",
-                    on_change=State.handle_change_header,
-                ),
-                rx.link(
-                    rx.button("Check out our docs!"),
-                    href="https://reflex.dev/docs/getting-started/introduction/",
-                    is_external=True,
-                ),
-                spacing="5",
-                justify="center",
-                min_height="85vh",
+                id = "child-base",
             )
-        )
+    return base(
+        child
     )
 
 
 app = rx.App()
 app.add_page(index)
+app.add_page(about, route="/about")
