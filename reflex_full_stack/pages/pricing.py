@@ -1,7 +1,8 @@
 import reflex as rx
 from ..ui.base import base
+from ..navigation import routes 
 
-
+@rx.page(route=routes.PRICING_PATH)
 def pricing_page() -> rx.Component:
     child = rx.container(
                 rx.vstack(
