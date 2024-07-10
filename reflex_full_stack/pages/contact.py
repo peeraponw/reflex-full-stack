@@ -5,15 +5,15 @@ from ..ui.base import base
 def page() -> rx.Component:
     child = rx.container(
                 rx.vstack(
-                    rx.heading("About", size="9"),
-                    rx.text("This is the about page!"),
+                    rx.heading("Contact", size="9"),
+                    rx.text("This is the contact page!"),
                     spacing="5",
                     justify="center",
                     align="center",
                     min_height="85vh",
                     
                 ),
-                id="about-container"
+                id="contact-container"
             )   
     return base(
         child    
