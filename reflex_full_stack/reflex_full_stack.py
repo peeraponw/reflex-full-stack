@@ -33,7 +33,7 @@ def index() -> rx.Component:
                     rx.text("This is my new app!"),
                     rx.link(
                         rx.button("Go to About"),
-                        href="/about",
+                        href=navigation.routes.ABOUT_PATH,
                         ),
                     spacing="5",
                     justify="center",
