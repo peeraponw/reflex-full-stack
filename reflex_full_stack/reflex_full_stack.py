@@ -4,10 +4,8 @@ import reflex as rx
 
 from rxconfig import config
 from .ui.base import base
-# from .pages.about import about
-# from .pages.pricing import pricing
-# from .pages.contact import contact
-from .pages import about, pricing, contact
+
+from . import navigation, pages
 
 
 class State(rx.State):
@@ -33,26 +31,10 @@ def index() -> rx.Component:
                     rx.heading(State.header, size="9"),
                     
                     rx.text("This is my new app!"),
-                    
                     rx.link(
-                        rx.button("Go to About page"),
-                        href="/about"
+                        rx.button("Go to About"),
+                        href="/about",
                         ),
-                    # rx.text(
-                    #     "Get started by editing ",
-                    #     rx.code(f"{config.app_name}/{config.app_name}.py"),
-                    #     size="5",
-                    # ),
-                    # rx.button(State.clicked, on_click=State.handle_did_click, id="button"),
-                    # rx.input(
-                    #     default_value="Hello",
-                    #     on_change=State.handle_change_header,
-                    # ),
-                    # rx.link(
-                    #     rx.button("Check out our docs!"),
-                    #     href="https://reflex.dev/docs/getting-started/introduction/",
-                    #     is_external=True,
-                    # ),
                     spacing="5",
                     justify="center",
                     align="center",
@@ -67,6 +49,6 @@ def index() -> rx.Component:
 
 app = rx.App()
 app.add_page(index)
-app.add_page(about.page, route="/about")
-app.add_page(pricing.page, route="/pricing")
-app.add_page(contact.page, route="/contact")
+app.add_page(pages.about.about_page, route=navigation.routes.ABOUT_PATH)
+app.add_page(pages.pricing.pricing_page, route=navigation.routes.PRICING_PATH)
+app.add_page(pages.contact.contact_page, route=navigation.routes.CONTACT_PATH)

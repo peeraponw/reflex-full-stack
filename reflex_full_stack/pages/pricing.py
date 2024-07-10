@@ -2,7 +2,7 @@ import reflex as rx
 from ..ui.base import base
 
 
-def page() -> rx.Component:
+def pricing_page() -> rx.Component:
     child = rx.container(
                 rx.vstack(
                     rx.heading("Pricing", size="9"),
